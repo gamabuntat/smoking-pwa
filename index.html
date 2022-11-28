@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>🚬🚬🚬</title>
+        <meta
+            name="description"
+            content="this is app to make it easier for you to quit smoking"
+        />
+        <meta name="color-scheme" content="dark" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, minimal-ui, viewport-fit=cover"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#00aba9" />
+        <meta name="theme-color" content="#ffffff" />
+        <link href="styles.css" rel="stylesheet" />
+        <script async src="reg.js"></script>
+        <script defer type="module" src="main.mjs"></script>
+    </head>
+    <body>
+        <main>
+            <article>
+                <header>
+                    <h1 class="title">🛑 Stop smoking 🛑<br />maybe today...</h1>
+                </header>
+                <div class="counter-wrap">
+                    <div class="mood">⌛</div>
+                    <div class="counter">
+                        <button
+                            class="counter__decrease btn"
+                            type="button"
+                            title="-"
+                            aria-label="decrease"
+                        >
+                            -
+                        </button>
+                        <span class="counter__label">~</span>
+                        <button
+                            class="counter__increase btn"
+                            type="button"
+                            title="+"
+                            aria-label="increase"
+                        >
+                            +
+                        </button>
+                    </div>
+                    <p class="recommended">
+                        Recommended ≤
+                        <span class="recommended__max-today">~</span>
+                    </p>
+                </div>
+                <button
+                    class="done-btn"
+                    type="button"
+                    title="Maybe that's all for today?"
+                    aria-label="stop it"
+                >
+                    That's all for today
+                </button>
+                <article class="stats">
+                    <header><h2 class="stats__title">Stats:</h2></header>
+                    <p class="total-days">
+                        You are trying to quit smoking already:
+                        <span class="total-days__count">~</span>
+                        day(s)
+                    </p>
+                    <div class="cigarettes">
+                        <span class="cigarettes__icons"></span>
+                        <div class="cigarettes__label">
+                            (<span class="cigarettes__count">~</span>) /
+                            <span class="cigarettes__total-available">~</span>
+                        </div>
+                    </div>
+                </article>
+            </article>
+        </main>
+    </body>
+</html>
