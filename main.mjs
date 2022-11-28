@@ -1,8 +1,8 @@
-import cigarettes from 'cigarettes.mjs';
-import * as storage from '/localStorage.mjs';
-import { eventEmitter } from '/utils/eventEmitter.mjs';
-import { pipe } from '/utils/pipe.mjs';
-import { cx } from '/utils/cx.mjs';
+import cigarettes from './cigarettes.mjs';
+import * as storage from './localStorage.mjs';
+import { eventEmitter } from './utils/eventEmitter.mjs';
+import { pipe } from './utils/pipe.mjs';
+import { cx } from './utils/cx.mjs';
 
 const emitter = eventEmitter();
 
