@@ -53,6 +53,7 @@ article {
     min-width: 2em;
     font-size: 1rem;
     cursor: pointer;
+    color: inherit;
 }
 
 .counter {
@@ -88,6 +89,7 @@ article {
     border: 2px solid #525252;
     font-size: 1rem;
     cursor: pointer;
+    color: inherit;
 }
 
 .done-btn:active {
