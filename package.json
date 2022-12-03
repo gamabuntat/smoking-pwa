@@ -4,7 +4,7 @@
     "description": "## App for helps you to quit smoking !",
     "private": true,
     "scripts": {
-        "build": "rm -rf dist && webpack && node scripts/render.js",
+        "build": "rm -rf dist && webpack --mode production && node scripts/render.js",
         "start": "npx webpack serve"
     },
     "keywords": [],
@@ -30,7 +30,6 @@
         "eslint": "^8.28.0",
         "eslint-plugin-react": "^7.31.11",
         "html-inline-css-webpack-plugin": "^1.11.1",
-        "html-webpack-inline-source-plugin": "^0.0.10",
         "html-webpack-plugin": "^5.5.0",
         "mini-css-extract-plugin": "^2.7.1",
         "style-loader": "^3.3.1",

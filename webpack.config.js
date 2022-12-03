@@ -1,9 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
-const HTMLInlineCSSWebpackPlugin = require("html-inline-css-webpack-plugin").default;
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HTMLInlineCSSWebpackPlugin =
+    require('html-inline-css-webpack-plugin').default;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = (env) => {
     return {
@@ -27,7 +28,9 @@ module.exports = (env) => {
                 {
                     test: /\.css$/i,
                     use: [
-                        MiniCssExtractPlugin.loader,
+                        env.production
+                            ? MiniCssExtractPlugin.loader
+                            : 'style-loader',
                         'css-loader',
                     ],
                 },
@@ -38,6 +41,9 @@ module.exports = (env) => {
             alias: {
                 '~': path.resolve(__dirname, 'src'),
             },
+        },
+        optimization: {
+            minimizer: [`...`, new CssMinimizerPlugin()],
         },
         plugins: [
             new MiniCssExtractPlugin(),
