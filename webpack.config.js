@@ -6,12 +6,13 @@ const HTMLInlineCSSWebpackPlugin =
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-module.exports = (env) => {
+module.exports = (env, argv) => {
+    const isProd = argv.mode === 'production';
     return {
-        mode: env.production ? 'production' : 'development',
-        devtool: env.production ? 'source-map' : 'eval',
+        mode: argv.mode,
+        devtool: !isProd ? 'source-map' : 'eval',
         entry: {
-            bundle: env.production ? './src/index.prod.tsx' : './src/index.tsx',
+            bundle: isProd ? './src/index.prod.tsx' : './src/index.tsx',
             sw: './src/sw.js',
         },
         output: {
@@ -28,7 +29,7 @@ module.exports = (env) => {
                 {
                     test: /\.css$/i,
                     use: [
-                        env.production
+                        isProd
                             ? MiniCssExtractPlugin.loader
                             : 'style-loader',
                         'css-loader',
