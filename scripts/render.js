@@ -4,7 +4,7 @@ const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 
 require('@babel/register')({
-    extensions: ['.tsx', '.ts'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
     plugins: [
         [
             require.resolve('babel-plugin-module-resolver'),
