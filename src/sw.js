@@ -20,6 +20,7 @@ self.addEventListener('install', (evt) => {
         caches
             .open(myCacheName)
             .then((cache) => cache.addAll([...STATIC_URLS, ...ANOTHER_URLS]))
+            .catch(console.error)
     );
 });
 
@@ -46,6 +47,7 @@ self.addEventListener('fetch', (evt) => {
             caches
                 .match(evt.request)
                 .then((response) => response || fetch(evt.request))
+                .catch(console.error)
         );
         evt.waitUntil(
             caches
@@ -55,6 +57,7 @@ self.addEventListener('fetch', (evt) => {
                         cache.put(evt.request, response)
                     )
                 )
+                .catch(console.error)
         );
     }
 });

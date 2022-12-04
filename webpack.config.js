@@ -8,8 +8,9 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = (env, argv) => {
     const isProd = argv.mode === 'production';
+
     return {
-        mode: argv.mode,
+        mode: argv.mode || 'development',
         devtool: !isProd ? 'source-map' : 'eval',
         entry: {
             bundle: isProd ? './src/index.prod.tsx' : './src/index.tsx',
