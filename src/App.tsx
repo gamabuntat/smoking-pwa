@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 
 import { useLocalStorage } from '~/hooks/useLocalStorage';
 import cigarettes from '~/cigarettes';
@@ -29,11 +29,7 @@ export const App = () => {
                 </header>
                 <div className="counter-wrap">
                     <div className="mood">
-                        {String.fromCodePoint(
-                            cigarettesToday > maxCigarettesToday
-                                ? 0x1f47a
-                                : 0x1f62c
-                        )}
+                        {cigarettesToday > maxCigarettesToday ? `🤨` : `🐸`}
                     </div>
                     <div className="counter">
                         <button
@@ -84,7 +80,7 @@ export const App = () => {
                         );
                     }}
                 >
-                    That`&apos;`s all for today
+                    That&apos;s all for today
                 </button>
                 <article className="stats">
                     <header>
